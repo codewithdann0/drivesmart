@@ -5,47 +5,47 @@ const Navbar = () => {
     <nav className="bg-white shadow-md">
       <div className="container px-2">
         <div className="flex justify-between items-center py-4">
-          <div className="text-2xl font-bold text-yellow-600 mr-20">
-            DriveSmart
+          <div className="text-2xl font-bold text-yellow-600 mr-15  pr-2">
+            SABBA IFII
           </div>
-          <ul className="flex space-x-6 p-0 m-0">
+          <ul className="flex space-x-6 p-0 ">
             <li>
-              <Link href="home" className="text-gray-800 hover:text-yellow-600 text-sm">
+              <Link href="/" className="text-gray-800 hover:text-yellow-600 text-sm hover:underline ml-15">
                 Home
               </Link>
             </li>
             <li>
-              <Link href="Course" className="text-gray-800 hover:text-yellow-600 text-sm">
+              <Link href="course" className="text-gray-800 hover:text-yellow-600 text-sm hover:underline">
                 Course
               </Link>
             </li>
             <li>
-              <Link href="Registration" className="text-gray-800 hover:text-yellow-600 text-sm">
+              <Link href="registration" className="text-gray-800 hover:text-yellow-600 text-sm hover:underline">
                 Registration
               </Link>
             </li>
             <li>
-              <Link href="about" className="text-gray-800 hover:text-yellow-600 text-sm">
+              <Link href="about" className="text-gray-800 hover:text-yellow-600 text-sm hover:underline">
                 About 
               </Link>
             </li>
             <li>
-              <Link href="Instructors" className="text-gray-800 hover:text-yellow-600 text-sm">
+              <Link href="instructors" className="text-gray-800 hover:text-yellow-600 text-sm hover:underline">
                 Instructors
               </Link>
             </li>
             <li>
-              <Link href="Testimonials" className="text-gray-800 hover:text-yellow-600 text-sm">
+              <Link href="testimonials" className="text-gray-800 hover:text-yellow-600 text-sm hover:underline">
                 Testimonials
               </Link>
             </li>
             <li>
-              <Link href="Contact" className="text-gray-800 hover:text-yellow-600 text-sm">
+              <Link href="contact" className="text-gray-800 hover:text-yellow-600 text-sm hover:underline">
                 Contact 
               </Link>
             </li>
             <li className="p-0">
-              <Link href="FAQs" className="text-gray-800 hover:text-yellow-600 text-sm">
+              <Link href="faqs" className="text-gray-800 hover:text-yellow-600 text-sm hover:underline">
                 FAQs
               </Link>
             </li>
