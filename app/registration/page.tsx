@@ -30,7 +30,7 @@ export default function Registration() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Logic for submitting form data goes here
-    alert("Registration submitted successfully!");
+    alert("Registration submitted successfully!")
   };
 
   return (

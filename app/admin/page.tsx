@@ -13,12 +13,13 @@ const AdminLogin = () => {
         e.preventDefault();
 
         try {
-            const res = await fetch('/api/admin/login', {
+            const res = await fetch('pages/api/admin/login.ts', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ username, password }),
+               
             });
 
             const data = await res.json();
@@ -28,6 +29,7 @@ const AdminLogin = () => {
                 router.push('/admin/dashboard');
             } else {
                 setError(data.message);
+                
             }
         } catch (error) {
             setError('An error occurred. Please try again.');

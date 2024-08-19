@@ -6,7 +6,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             return res.status(400).json({ message: 'Username and password are required' });
         }
 
-        const db = await DbPromise;
+        const db = await dbPromise;
         const admin = await db.get('SELECT * FROM admins WHERE username = ?', [username]);
 
         if (admin) {
