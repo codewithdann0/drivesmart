@@ -31,9 +31,10 @@ const CoursesPage = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {courses.map((course: any) => (
                     <div key={course.id} className="bg-white p-6 rounded-lg shadow-md">
-                        <h2 className="text-2xl font-bold mb-2">{course.name}</h2>
+                      <img src={course.image_url} alt="" />
+                        <h2 className="text-2xl font-bold mb-2">{course.title}</h2>
                         <p className="text-gray-700 mb-4">{course.description}</p>
-                        <p className="font-semibold">Price: ${course.price}</p>
+                        <p className="font-semibold">Price: ${course.cost}</p>
                         {/* Add more course details as needed */}
                     </div>
                 ))}

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaHome, FaUser, FaQuestionCircle, FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaHome,FaCar ,FaUser, FaQuestionCircle, FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -10,6 +10,7 @@ const Footer = () => {
           <div className="w-full md:w-1/4 mb-6">
             <h2 className="text-xl font-bold mb-4">Quick Links</h2>
             <ul>
+              <FaCar></FaCar>
               <li>
                 <Link href="/" className="hover:text-yellow-400 flex items-center">
                   <FaHome className="mr-2" /> Home
@@ -55,7 +56,7 @@ const Footer = () => {
 
         {/* Copyright Information */}
         <div className="mt-6 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} DriveSmart Academy. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Daniel Car Training. All rights reserved.</p>
         </div>
       </div>
     </footer>

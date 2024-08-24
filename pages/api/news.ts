@@ -6,7 +6,6 @@ const dbPromise = open({
     filename: './db/database.db',
     driver: sqlite3.Database
 });
-
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'GET') {
         try {

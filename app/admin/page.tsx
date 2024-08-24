@@ -13,7 +13,7 @@ const AdminLogin = () => {
         e.preventDefault();
 
         try {
-            const res = await fetch('pages/api/admin/login.ts', {
+            const res = await fetch('/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -26,7 +26,7 @@ const AdminLogin = () => {
 
             if (res.ok) {
                 // Redirect to admin dashboard or home
-                router.push('/admin/dashboard');
+                router.push('api/dashboard');
             } else {
                 setError(data.message);
                 
