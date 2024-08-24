@@ -18,7 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
         try {
             const db = await dbPromise;
-            const admin = await db.get('SELECT * FROM admins WHERE username = ?', [username]);
+            const admin = await db.get('SELECT * FROM admins WHERE name = admin', [username]);
 
             if (admin && await bcrypt.compare(password, admin.password)) {
                 // Handle successful login
