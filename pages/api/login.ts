@@ -1,11 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import sqlite3 from 'sqlite3';
 import { open } from 'sqlite';
-import bcrypt from 'bcrypt';
 
 const dbPromise = open({
     filename: './db/database.db',
-    driver: sqlite3.Database
+    driver: sqlite3.Database,
 });
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -18,19 +17,26 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
         try {
             const db = await dbPromise;
-            const admin = await db.get('SELECT * FROM admins WHERE name = admin', [username]);
+            const admin = await db.get('SELECT * FROM admins WHERE name = ?', [username]);
 
-            if (admin && await bcrypt.compare(password, admin.password)) {
-                // Handle successful login
-                res.status(200).json({ message: 'Login successful' });
+            console.log('Admin data:', admin); // Log admin data
+
+            if (admin) {
+                // Directly compare plain text password
+                if (password === admin.password) {
+                    return res.status(200).json({ message: 'Login successful' });
+                } else {
+                    return res.status(401).json({ message: 'Invalid username or password' });
+                }
             } else {
-                res.status(401).json({ message: 'Invalid username or password' });
+                return res.status(401).json({ message: 'Invalid username or password' });
             }
         } catch (error) {
-            res.status(500).json({ message: 'Internal server error' });
+            console.error('Error during login:', error);
+            return res.status(500).json({ message: 'Internal server error' });
         }
     } else {
         res.setHeader('Allow', ['POST']);
-        res.status(405).end(`Method ${req.method} Not Allowed`);
+        return res.status(405).end(`Method ${req.method} Not Allowed`);
     }
 }
