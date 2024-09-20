@@ -1,3 +1,4 @@
+import { requireAuth } from '../../lib/auth';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import sqlite3 from 'sqlite3';
 import { open } from 'sqlite';
@@ -24,12 +25,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             if (admin) {
                 // Directly compare plain text password
                 if (password === admin.password) {
+                    console.log(password)
                     return res.status(200).json({ message: 'Login successful' });
                 } else {
-                    return res.status(401).json({ message: 'Invalid username or password' });
+                    return res.status(401).json({ message: 'Invalid username or password ' });
                 }
             } else {
-                return res.status(401).json({ message: 'Invalid username or password' });
+                return res.status(401).json({ message: 'Invalid username or password ' });
             }
         } catch (error) {
             console.error('Error during login:', error);

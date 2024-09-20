@@ -25,6 +25,7 @@ const CoursesPage = () => {
     }, []);
 
     return (
+        
         <div className="container mx-auto px-4 py-10">
             <h1 className="text-3xl font-bold mb-6 text-center">Our Courses</h1>
             {error && <p className="text-red-500 mb-4">{error}</p>}
