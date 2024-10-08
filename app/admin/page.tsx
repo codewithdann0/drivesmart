@@ -19,17 +19,19 @@ const AdminLogin = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ username, password }),
-               
             });
 
-            const data = await res.json();
+            const data = await res.json(); // Parse the JSON response
 
             if (res.ok) {
-                // Redirect to admin dashboard or home
-                router.push('api/dashboard');
+                // Log the welcome message if needed
+                console.log(data.message);
+
+                // Redirect to the correct dashboard page (e.g., /dashboard)
+                router.push('/dashboard');
             } else {
+                // Show the error message from the response
                 setError(data.message);
-                
             }
         } catch (error) {
             setError('An error occurred. Please try again.');
